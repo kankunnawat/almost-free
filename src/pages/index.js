@@ -10,6 +10,7 @@ import ServiceSection from '../sections/service-section'
 import Feature from '../sections/feature'
 import CoreFeature from '../sections/core-feature'
 import WorkFlow from '../sections/workflow'
+import Contact from '../sections/contact'
 // import Package from '../sections/package'
 // import TeamSection from '../sections/team-section'
 // import TestimonialCard from '../sections/testimonial'
@@ -18,7 +19,7 @@ export default function IndexPage() {
 	return (
 		<ThemeProvider theme={theme}>
 			<Layout>
-				<SEO title="Lotto" />
+				<SEO title="AlmostFree" />
 				<Banner />
 				<KeyFeature />
 				<ServiceSection />
@@ -28,6 +29,7 @@ export default function IndexPage() {
 				{/* <Package />
 				<TeamSection />
 				<TestimonialCard /> */}
+				<Contact />
 			</Layout>
 		</ThemeProvider>
 	)
