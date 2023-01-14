@@ -7,13 +7,13 @@ export default [
 		path: 'feature',
 		label: 'Features',
 	},
-	// ,
-	// {
-	//   path: 'pricing',
-	//   label: 'Pricing',
-	// },
-	// {
-	//   path: 'testimonial',
-	//   label: 'Testimonial',
-	// },
+	,
+	{
+		path: 'pricing',
+		label: 'Pricing',
+	},
+	{
+		path: 'testimonial',
+		label: 'Testimonial',
+	},
 ]

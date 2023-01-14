@@ -11,12 +11,13 @@ export default function Banner() {
 			<Container sx={styles.banner.container}>
 				<Box sx={styles.banner.contentBox}>
 					<Heading as="h1" variant="heroPrimary">
-						Top Quality Digital Products to Explore
+						แจกเกือบฟรี สุ่มของแจกทุกวัน <br />
+						จ่ายเพียง 1 บาท ก็มีสิทธิ์ลุ้นรับรางวัล
 					</Heading>
 					<Text as="p" variant="heroSecondary">
-						Check out our website to find real software products and
-						deals if you need a website or web application this is
-						the place to go
+						ประสบการณ์การช้อปปิ้งแบบใหม่ จ่าย 1 บาท นอนรอลุ้นรับของ
+						<br />
+						ของหลากหลายประเภท มูลค่าสูงสุด 20,000 บาท
 					</Text>
 					{/* <Button variant="primary">Explore</Button> */}
 				</Box>
@@ -76,7 +77,7 @@ const styles = {
 			justifyContent: 'center',
 			textAlign: 'center',
 			display: 'inline-flex',
-			mb: [0, null, -6, null, null, '-40px', null, -3],
+			mb: [0, null, -6, null, null, '0px', null, -3],
 			img: {
 				position: 'relative',
 				height: [245, 'auto'],

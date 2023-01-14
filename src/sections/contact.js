@@ -8,11 +8,12 @@ const Contact = () => {
 			<Container sx={styles.contact.container}>
 				<Box sx={styles.contact.contentBox}>
 					<Heading as="h1" variant="heroPrimary">
-						If you interested in, please subscribe
+						สนใจมาร่วมสนุกด้วยกัน <br />
+						กรอกเมลได้เลย!
 					</Heading>
-					<Label htmlFor="email">Email</Label>
+					<Label htmlFor="email">อีเมล</Label>
 					<Input name="email" id="email" />
-					<Label htmlFor="comment">Comment</Label>
+					<Label htmlFor="comment">ข้อเสนอแนะ (optional)</Label>
 					<Input name="comment" id="comment" />
 				</Box>
 			</Container>
@@ -24,7 +25,6 @@ export default Contact
 
 const styles = {
 	contact: {
-		pt: ['140px', '145px', '155px', '170px', null, null, '180px', '215px'],
 		pb: [2, null, 0, null, 2, 0, null, 5],
 		position: 'relative',
 		container: {

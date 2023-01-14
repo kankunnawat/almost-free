@@ -21,11 +21,11 @@ export default function IndexPage() {
 			<Layout>
 				<SEO title="AlmostFree" />
 				<Banner />
-				<KeyFeature />
-				<ServiceSection />
-				<Feature />
-				<CoreFeature />
 				<WorkFlow />
+				{/* <KeyFeature /> */}
+				<ServiceSection />
+				{/* <Feature /> */}
+				<CoreFeature />
 				{/* <Package />
 				<TeamSection />
 				<TestimonialCard /> */}
