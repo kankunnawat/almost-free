@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Container, Grid, Box, Heading, Text } from 'theme-ui'
@@ -57,7 +58,7 @@ export default function WorkFlow() {
 
 const styles = {
 	workflow: {
-		backgroundColor: 'primary',
+		backgroundColor: '#EA3A60',
 		backgroundImage: `url(${PatternBG})`,
 		backgroundRepeat: `no-repeat`,
 		backgroundPosition: 'center center',
