@@ -123,7 +123,8 @@ const styles = {
 		alignItems: ['flex-start', null, null, 'center'],
 		justifyContent: ['flex-start', null, null, 'space-between'],
 		flexDirection: ['column', null, null, 'row'],
-		pb: [0, null, null, null, null, 7],
+		pb: [0, null, null, null, null, 3],
+		pt: [7],
 	},
 	thumbnail: {
 		mr: ['auto', null, null, 6, 60, 85],

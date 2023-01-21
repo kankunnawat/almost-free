@@ -1,8 +1,18 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { Container, Box, Heading, Label, Input } from 'theme-ui'
+import { useState } from 'react'
+import { Container, Box, Heading, Label, Input, Button } from 'theme-ui'
 
 const Contact = () => {
+	const [formData, setFormData] = useState({ email: '', comment: '' })
+	// const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+
+	const handleChangeInput = (e) => {
+		const { name, value } = e.target
+		setFormData({ ...formData, [name]: value })
+	}
+
+	const { email, comment } = formData
 	return (
 		<section sx={styles.contact}>
 			<Container sx={styles.contact.container}>
@@ -12,9 +22,24 @@ const Contact = () => {
 						กรอกเมลได้เลย!
 					</Heading>
 					<Label htmlFor="email">อีเมล</Label>
-					<Input name="email" id="email" />
+					<Input
+						type="email"
+						required
+						name="email"
+						id="email"
+						value={email}
+						onChange={handleChangeInput}
+					/>
 					<Label htmlFor="comment">ข้อเสนอแนะ (optional)</Label>
-					<Input name="comment" id="comment" />
+					<Input
+						name="comment"
+						id="comment"
+						value={comment}
+						onChange={handleChangeInput}
+					/>
+					<Button mt={6} variant="primary">
+						Submit
+					</Button>
 				</Box>
 			</Container>
 		</section>
