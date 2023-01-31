@@ -1,11 +1,14 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Container, Box, Heading, Label, Input, Button } from 'theme-ui'
+import { client } from 'lib/sanity.client'
 
 const Contact = () => {
 	const [formData, setFormData] = useState({ email: '', comment: '' })
-	// const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+	const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+	const [loading, setLoading] = useState(false)
 
 	const handleChangeInput = (e) => {
 		const { name, value } = e.target
@@ -13,6 +16,25 @@ const Contact = () => {
 	}
 
 	const { email, comment } = formData
+
+	const handleSubmit = () => {
+		setLoading(true)
+
+		const contact = {
+			_type: 'contact',
+			email: formData.email,
+			comment: formData.comment,
+		}
+
+		client
+			.create(contact)
+			.then(() => {
+				setLoading(false)
+				setIsFormSubmitted(true)
+			})
+			.catch((err) => console.log(err))
+	}
+
 	return (
 		<section sx={styles.contact}>
 			<Container sx={styles.contact.container}>
@@ -21,25 +43,41 @@ const Contact = () => {
 						สนใจมาร่วมสนุกด้วยกัน <br />
 						กรอกเมลได้เลย!
 					</Heading>
-					<Label htmlFor="email">อีเมล</Label>
-					<Input
-						type="email"
-						required
-						name="email"
-						id="email"
-						value={email}
-						onChange={handleChangeInput}
-					/>
-					<Label htmlFor="comment">ข้อเสนอแนะ (optional)</Label>
-					<Input
-						name="comment"
-						id="comment"
-						value={comment}
-						onChange={handleChangeInput}
-					/>
-					<Button mt={6} variant="primary">
-						Submit
-					</Button>
+					{!isFormSubmitted ? (
+						<>
+							<Label htmlFor="email">อีเมล</Label>
+							<Input
+								type="email"
+								required
+								name="email"
+								id="email"
+								value={email}
+								onChange={handleChangeInput}
+							/>
+							<Label htmlFor="comment">
+								ข้อเสนอแนะ (optional)
+							</Label>
+							<Input
+								name="comment"
+								id="comment"
+								value={comment}
+								onChange={handleChangeInput}
+							/>
+							<Button
+								mt={6}
+								variant="primary"
+								onClick={handleSubmit}
+							>
+								{!loading ? 'Submit' : 'Sending...'}
+							</Button>
+						</>
+					) : (
+						<>
+							<Heading as="h2" variant="heroPrimary">
+								Thank you for getting in touch!{' '}
+							</Heading>
+						</>
+					)}
 				</Box>
 			</Container>
 		</section>
